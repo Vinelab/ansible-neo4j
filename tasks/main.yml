@@ -1,0 +1,28 @@
+---
+-   name: launch neo4j
+    docker:
+        docker_api_version: 0.7.1
+        image: "{{image}}"
+        name: "{{name}}"
+        detach: true
+        ports: "{{port}}:7474"
+        expose: 7474
+        volumes:
+            - "{{volume}}:/var/lib/neo4j/data"
+    tags:
+        - launch
+        - neo4j
+    when: not ambassador
+
+-   name: launch neo4j ambassador
+    docker:
+        docker_api_version: 0.7.1
+        image: svendowideit/ambassador
+        name: "{{name}}"
+        expose: 7474
+        env:
+            - "NEO4J_PORT_7474_TCP=tcp://{{host}}:7474"
+    tags:
+        - launch
+        - neo4j
+    when: ambassador

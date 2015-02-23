@@ -1,0 +1,8 @@
+image: vinelab/neo4j
+name: neo4j
+host: localhost
+ram: 2GB
+port: 7474
+volume: /neo4j
+privileged: true
+ambassador: false
