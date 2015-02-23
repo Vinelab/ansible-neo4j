@@ -1,5 +1,5 @@
 # Neo4j - Ansible Role
-Configure & launch a new [Neo4j](http://neo4j.com) instance using [Docker](http://docker.com) containers.
+Configure & launch [Neo4j](http://neo4j.com) instances using [Docker](http://docker.com) containers.
 
 #### Dependencies
 You may want to setup the host with Docker before using this role, a helper role would be [ansible-docker](http://github.com/vinelab/ansible-docker)
